@@ -1,0 +1,27 @@
+.leftLayer{
+	display: flex;
+	width: 245px;
+	height: auto;
+	background-color: green;
+	margin-right: 15px;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.leftItemText{
+	padding: 10px;
+
+}
+
+.leftImg_1 {
+	display: flex;
+	justify-content: center;
+	padding: 10px;
+}
+.leftImg_1 img{
+	width: 100px;
+	height: 150px;
+}
+.leftImg_2 img{
+	width: 245px;
+	height: 175px;
+}

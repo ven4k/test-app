@@ -1,0 +1,50 @@
+.header {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: flex-start;
+    background-color: #f7f7f7;
+    width: 1220px;
+    height: 120px;
+    align-items: center;
+    position: relative;
+}
+
+.picture{
+   margin-left: auto;
+}
+.picture img{
+    width: 400px;
+    height: auto;
+}
+
+
+.item {
+    color: red;
+    font-size: 35px;
+    font-family: Arial;
+    text-decoration: none;
+    padding: 3px;
+    margin: 10px;
+}
+
+.imgFirst {
+    width: 120px;
+    height: 70px;
+    margin-left: 10px;
+}
+
+.navMenu {
+
+}
+
+.item a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.item a {
+    color: red;
+    text-decoration: none;
+    padding: 2px;
+    margin: 7px;
+}

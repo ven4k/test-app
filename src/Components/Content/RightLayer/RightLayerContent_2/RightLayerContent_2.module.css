@@ -1,0 +1,24 @@
+.rightLayerContent_2{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-top: 10px;
+	padding: 5px;
+}
+.rightLayerItemImg_2 img {
+	width: 200px;
+	height: auto;
+	margin: 5px;
+}
+
+.rightLayerItemImg_2 img:hover{
+	outline: 4px solid black;
+}
+
+.rightLayerItemImg_2{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 5px;
+	justify-content: flex-start;
+
+}

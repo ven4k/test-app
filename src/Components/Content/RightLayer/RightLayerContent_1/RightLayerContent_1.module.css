@@ -1,0 +1,21 @@
+.rightLayerContent_1{
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 10px;
+	border: 2px solid black;
+	padding: 5px;
+}
+.rightLayerItemImg{
+	padding: 5px;
+	margin: 5px;
+}
+
+.rightLayerItemImg img{
+	width: 150px;
+	height: auto;
+}
+
+.rightLayerItemText{
+	margin: 5px 10px 0 10px;
+}

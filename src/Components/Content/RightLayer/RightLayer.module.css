@@ -1,0 +1,7 @@
+.rightLayer{
+	width: 960px;
+	height: auto;
+	background-color: yellow;
+	display: flex;
+	flex-direction: column;
+}
