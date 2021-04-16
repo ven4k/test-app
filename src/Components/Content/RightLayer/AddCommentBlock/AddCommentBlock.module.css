@@ -1,17 +1,17 @@
-.addComment {
+.addCommentBlock {
 	display: flex;
 	margin: 20px 5px;
 	flex-direction: column;
 }
-.addComment textarea { 
+.addCommentBlock textarea {
 resize: none;
 
 }
-.addComment button {
+.addCommentBlock button {
 	margin-top: 5px;
 	align-self: flex-start;
 }
-.addComment h3 {
+.addCommentBlock h3 {
 	margin-left: 5px;
 	
 }

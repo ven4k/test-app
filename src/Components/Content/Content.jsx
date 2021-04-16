@@ -10,7 +10,7 @@ return (
 <div>
 <main className={style.main}>
   <LeftLayer /> 
-  <RightLayer state={props.state} addNewComment={props.addNewComment} />   
+  <RightLayer />
 </main>
 </div>
 )
