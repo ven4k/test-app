@@ -2,6 +2,8 @@ import React from 'react';
 
 const ADD_COMMENT = 'ADD_COMMENT';
 const UPDATE_NEW_MESSAGE_COMMENT_BODY = 'UPDATE_NEW_MESSAGE_COMMENT_BODY';
+const DELETE_ALL_MESSAGES = 'DELETE_ALL_MESSAGES';
+const DELETE_TARGET_MESSAGE = 'DELETE_TARGET_MESSAGE';
 
 
 let initState = {
@@ -22,19 +24,33 @@ let initState = {
 const commentsReducer = (state = initState, action) => {
     let stateCopy = {...state}
     let messageBody = stateCopy.commentText;
+    let newId = stateCopy.comments.forEach((item, i=2 ) => {
+        item.id = i++;
+    });
+
     switch(action.type){
             case ADD_COMMENT:
-                stateCopy.comments.push({id: 3, message: messageBody, views: 543});
+                stateCopy.comments.push({id: newId, message: messageBody, views: 0 });
                 stateCopy.commentText = '';
                 return stateCopy;
             case UPDATE_NEW_MESSAGE_COMMENT_BODY:
                 stateCopy.commentText = action.messageBody;
                 return stateCopy;
+            case DELETE_ALL_MESSAGES:
+                stateCopy.comments.splice(0)
+                return stateCopy;
+            case DELETE_TARGET_MESSAGE:
+                stateCopy.comments.filter(item => item.id !== action.payload);
+                return stateCopy;
             default: return stateCopy;
         }
 }
-export const sendMessageAC = () => ({type: ADD_COMMENT })
+export const sendMessageAC = () => ({type: ADD_COMMENT });
 
-export const updateNewMessageCommentBodyAC = (messageBody) => ({type: UPDATE_NEW_MESSAGE_COMMENT_BODY, messageBody: messageBody})
+export const updateNewMessageCommentBodyAC = (messageBody) => ({type: UPDATE_NEW_MESSAGE_COMMENT_BODY, messageBody: messageBody});
+
+export const deleteAllMessagesAC = () => ({type: DELETE_ALL_MESSAGES});
+
+export const deleteTargetMessageAC = (id) => ({type: DELETE_TARGET_MESSAGE, payload: id});
 
 export default commentsReducer;

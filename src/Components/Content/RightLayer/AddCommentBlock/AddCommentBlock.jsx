@@ -2,15 +2,15 @@ import React from "react";
 import style from "./AddCommentBlock.module.css";
 import CommentItem from "../CommentItem/CommentItem";
 import {useSelector, useDispatch} from "react-redux";
-import {sendMessageAC, updateNewMessageCommentBodyAC} from "../../../../redux/commentsReducer";
+import {deleteAllMessagesAC, sendMessageAC, updateNewMessageCommentBodyAC} from "../../../../redux/commentsReducer";
 
 const AddCommentBlock = () => {
     const dispatch = useDispatch();
     const commentsBlock = useSelector(state => state.commentsBlock);
-    const commentText = commentsBlock.commentText
+    const commentText = commentsBlock.commentText;
 
 
-    let messageElements = commentsBlock.comments.map(m => <CommentItem message={m.message} views={m.views} />)
+    let messageElements = commentsBlock.comments.map(m => <CommentItem message={m.message} views={m.views} id={m.id} />)
     let onSendMessageClick = () => {
         dispatch(sendMessageAC())
     }
@@ -18,6 +18,9 @@ const AddCommentBlock = () => {
     let onNewMessageChange = (e) => {
        let messageBody = e.target.value;
         dispatch(updateNewMessageCommentBodyAC(messageBody));
+    }
+    let deleteAllMessages = () => {
+        dispatch(deleteAllMessagesAC());
     }
 
   return (
@@ -33,6 +36,9 @@ const AddCommentBlock = () => {
       </div>
          <div>
              {messageElements}
+         </div>
+         <div>
+             <button onClick={deleteAllMessages}>Удалить все сообщения</button>
          </div>
      </div>
   )

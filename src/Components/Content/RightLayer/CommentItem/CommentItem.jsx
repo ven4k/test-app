@@ -1,7 +1,14 @@
 import React from 'react';
 import style from './CommentItem.module.css';
+import {useDispatch} from "react-redux";
+import {deleteTargetMessageAC} from "../../../../redux/commentsReducer";
 
 const CommentItem = (props) => {
+    const dispatch = useDispatch();
+    let deleteTargetMessage = (id) => {
+        dispatch(deleteTargetMessageAC(id));
+    }
+
     return (
     <div className={style.commentItem}>
         <div>
@@ -9,6 +16,9 @@ const CommentItem = (props) => {
         </div>
         <div>
             <span>{props.views}</span>
+        </div>
+        <div>
+            <button onClick={deleteTargetMessage}>Удалить</button>
         </div>
     </div>
 )
