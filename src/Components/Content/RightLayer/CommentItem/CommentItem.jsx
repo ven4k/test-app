@@ -5,8 +5,8 @@ import {deleteTargetMessageAC} from "../../../../redux/commentsReducer";
 
 const CommentItem = (props) => {
     const dispatch = useDispatch();
-    let deleteTargetMessage = (id) => {
-        dispatch(deleteTargetMessageAC(id));
+    let deleteTargetMessage = () => {
+        dispatch(deleteTargetMessageAC(props.id));
     }
 
     return (

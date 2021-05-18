@@ -14,7 +14,6 @@ return (
         <RightLayerContent_2 />
         <RightLayerContent_3 />
         <AddCommentBlockContainer />
-        <CommentItem />
     </div>
     );
 }

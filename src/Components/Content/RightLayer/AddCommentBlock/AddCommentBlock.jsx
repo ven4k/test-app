@@ -10,7 +10,7 @@ const AddCommentBlock = () => {
     const commentText = commentsBlock.commentText;
 
 
-    let messageElements = commentsBlock.comments.map(m => <CommentItem message={m.message} views={m.views} id={m.id} />)
+    let messageElements = commentsBlock.comments.map(m => <CommentItem key={m.id} message={m.message} views={m.views} id={m.id} />)
     let onSendMessageClick = () => {
         dispatch(sendMessageAC())
     }
